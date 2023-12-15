@@ -1,0 +1,1688 @@
+/*//////////////////////////// Fonts ////////////////////////////*/
+
+/* Raleway-reg */
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-Regular.eot');
+	src: local('☺'), url('../fonts/Raleway-Regular.woff') format('woff'), url('../fonts/Raleway-Regular.ttf') format('truetype'), url('../fonts/Raleway-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Raleway-bold */
+@font-face {
+	font-family: 'Raleway';
+	src: url('../fonts/Raleway-Bold.eot');
+	src: local('☺'), url('../fonts/Raleway-Bold.woff') format('woff'), url('../fonts/Raleway-Bold.ttf') format('truetype'), url('../fonts/Raleway-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+/* Comfortaa-reg */
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../fonts/Comfortaa-Regular.eot');
+	src: local('☺'), url('../fonts/Comfortaa-Regular.woff') format('woff'), url('../fonts/Comfortaa-Regular.ttf') format('truetype'), url('../fonts/Comfortaa-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Comfortaa-bold */
+@font-face {
+	font-family: 'Comfortaa';
+	src: url('../fonts/Comfortaa-Bold.eot');
+	src: local('☺'), url('../fonts/Comfortaa-Bold.woff') format('woff'), url('../fonts/Comfortaa-Bold.ttf') format('truetype'), url('../fonts/Comfortaa-Bold.svg') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+
+/*//////////////////////// Style elements null ///////////////////////////////////////*/
+* {padding: 0;margin: 0;border: 0;}
+*,*::before,*::after {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus, :active {outline: none;}
+a:focus, a:active {outline: none;}
+nav,footer,header,aside{display: block;}
+html, body {height: 100%;width: 100%;font-size: 100%;line-height: 1;font-size: 14px;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;}
+input, textarea, button {font-family: inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding: 0;border: 0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1, h2, h3, h4, h5, h6{font-size: inherit;font-weight: 400;}
+
+/* ////////////////////////////////// Styles ///////////////////////////////// */
+
+body {
+    font-family: "Raleway", "Comfortaa";
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+/* Стилизация навбара */
+.navbar {
+    position:relative;
+    display: flex;
+    z-index: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    min-width: 300px;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    padding: 0 10px 0 70px;
+    margin: 0 10px;
+    z-index: 3;
+}
+
+.logo:hover {
+    border-bottom: 4px solid rgb(252, 120, 3);  
+    transition: 0.25s;
+}
+
+.logo:hover .logo__link {
+    color: rgb(252, 120, 3);
+}
+
+.logo::before {
+    content: '';
+    -webkit-mask-size:contain ;
+    -webkit-mask-image: url(../img/logoico.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    position: absolute;
+    background-color: #fff;
+    height: 40px;
+    width: 40px;
+    left: 20px;
+}
+
+.logo:hover::before {
+    margin: 0 0 -4px 0;
+    background-color: rgb(252, 120, 3);
+    transition: 0.25s;
+}
+
+.logo:hover a {
+   margin: 0 0 -4px 0;
+   transition: 0.25s;
+}
+
+mark {
+    background-color: #D3D930;
+}
+
+.search {
+    display: flex;
+    margin: 0 40px 0 0;
+    position: relative;
+}
+
+.search-btn {
+    height: 24px;
+    fill: #F5E6DA;
+    margin: auto 0 auto 20px;
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+    width: 203px;
+    overflow-x: hidden;
+    animation: closeInput .7s ease both;
+}
+
+@keyframes closeInput {
+    0%{
+        width: 203px;
+    }
+    100%{
+        width: 0px;
+    }
+}
+
+.search-field.open-input {
+    animation: openInput .7s ease both;
+}
+
+@keyframes openInput {
+    0%{
+        width: 0px;
+    }
+    100%{
+        width: 203px;
+    }
+}
+
+.search-results {
+    position: absolute;
+    top: 51px;
+    right: 4px;
+    width: 283px;
+    background-color:#F5E6DA;
+    max-height: 200px;
+    overflow-y: auto;
+    font-family: "Comfortaa";
+    font-size: 14px;
+}
+
+.search-results div {
+    min-height: 50px;
+    margin: 0 20px;
+    text-align: center;
+    border-bottom: 1px solid gray;
+    padding: 18px 0;
+    cursor: pointer;
+}
+
+.search-results div:last-child {
+    border-bottom: 0px;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+    fill: rgb(252, 120, 3);
+    transition: .25s ease;
+}
+
+.search-input {
+    border-radius: 10px;
+    font-size: 16px;
+    height: 32px;
+    padding: 0 4px;
+    background-color: #F5E6DA;
+    font-family: "Comfortaa";
+}
+
+.menu__item-link, .logo__link, .menu__item_dropdown {
+    font-size: 24px;
+    color: white;
+}
+
+.menu__item, .menu__item-dropdownli{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+    padding:0 5px;
+}
+
+.menu__item:hover {
+    border-bottom: 4px solid rgb(252, 120, 3);
+    transition: 0.25s;
+}
+
+.menu__item-dropdownli.inactive:hover{
+    border-bottom: 4px solid rgb(252, 120, 3);
+    transition: .25s ease;
+}
+
+.menu__item-elem:hover a {
+    color: rgb(252, 120, 3);
+    transition: .25s ease;
+}
+
+.menu__item:hover .menu__item-link, .menu__item-dropdownli.inactive:hover .menu__item_dropdown {
+    color: rgb(252, 120, 3);
+    margin: 0 0 -4px 0;
+    transition: .25s ease;
+}
+
+.menu__item:nth-child(3) {
+    margin: 0 200px 0 0;
+    padding:0 15px 0 5px ;
+}
+
+.menu__item_dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu__item-dropdownli.inactive:hover .menu__item_dropdown::after {
+    background-color: rgb(252, 120, 3);   
+}
+
+.menu__item-dropdownli.active .menu__item_dropdown::after {
+    transition: 0.5s ease;
+    transform: rotate(180deg);
+}
+
+.menu__item-dropdownli.inactive .menu__item_dropdown::after {
+    transition: 0.5s ease;
+    transform: rotate(0deg);
+}
+
+.menu__item_dropdown::after {
+    content: '';
+    -webkit-mask-size:contain ;
+    -webkit-mask-image: url(../img/drop-down-button.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: #fff;
+    height: 13px;
+    width: 13px;
+    right: -17px;
+    top: 6px;
+    position: absolute;
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #4D4A4A;
+    z-index: 2;
+}
+
+.menu__item, .logo, .menu__item-dropdownli {
+    cursor: pointer;
+} 
+
+/* Выпадающее меню */
+
+.menu__item-dropdown-list { 
+    position: absolute;
+    top:100%;
+    left: 0;
+    height: 200px;
+    width: 125px;
+    overflow: auto;
+    background-color: #4D4A4A;
+}
+
+.menu__item-dropdownli.active {
+    transition: 2s;
+    background-color: rgb(252, 120, 3);
+    
+}
+
+.menu__item-dropdownli { 
+    position: relative;
+    width: 125px;
+    padding: 0 0 0 6px;
+}
+
+.dropdown-link {
+    color:white;
+    padding: 12px 0 0 5px;
+    width: 100%;
+    height: 100%;
+}
+
+
+.menu__item-elem {
+    min-width: 100px;
+    float: none;
+    display: flex;
+    position: relative;
+    font-size: 20px;
+    min-height: 40px;
+    justify-items: center;
+    align-items: center;
+}
+
+.menu__item-dropdownli.active .menu__item-dropdown-list { 
+    animation: dropdownAnim 1s;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.menu__item-dropdownli.inactive .menu__item-dropdown-list {
+    animation: dropdownAnimClose 1s both;
+}
+
+@keyframes dropdownAnim {
+    0%{
+        height: 0px;
+        display: flex;
+    }
+    100%{
+        height: 200px;
+    }
+}
+
+@keyframes dropdownAnimClose {
+    0%{
+        height: 200px;
+    }
+    100%{
+        height: 0px;
+        display: none;
+    }
+}
+
+/* Конец выпадающего меню */
+
+/* полоса прокрутки на выподающем меню */
+.menu__item-dropdown-list::-webkit-scrollbar{
+    width: 4px; /* ширина для вертикального скролла */
+    height: 2px; /* высота для горизонтального скролла */
+    color: white;
+}
+.menu__item-dropdown-list::-webkit-scrollbar-thumb{
+    background-color: black;
+    border-radius: 10px;
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 5px; /* ширина для вертикального скролла */
+    height: 2px; /* высота для горизонтального скролла */
+    background-color: white;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+}
+/* Конец настройки скроллов */
+/* стилизация бургера */
+
+.navbar__burger {
+    display: none;
+}
+
+.navbar__burger-menu {
+    display: none;
+}
+
+.navbar__list {
+    width: 100%;
+
+}
+
+.menu__item-link-burger{
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+/* конец навбара */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Стилизация блока слогана */
+
+.container__our-taglain {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 80px 0 0 0;
+    animation:pulse 10s infinite;
+}
+
+  
+@keyframes pulse {
+    0% {
+        background: rgb(235, 150, 166);  
+    }
+    25% {
+        background: rgb(255, 246, 179);
+    }
+    50%{
+        background: rgb(179, 255, 236);
+    }
+    75%{
+	    background: rgb(127, 155, 184);
+    }
+    100% {
+        background: rgb(235, 150, 166);
+    }
+}
+
+.container_taglain{
+    font-size: 64px;
+    text-transform: uppercase;
+    width: 90%;
+    text-align: center;
+    margin: 0 0 80px 0;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+/* Конец стилизации слогана */
+
+/* Ссылки по сайту */
+.container__dumplings-navigation {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 215px);
+    row-gap: 25px;
+    width: 100%;
+    padding: 30px 20px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.container__dumpling {
+    height: 200px;
+    width: 240px;
+    margin: 15px auto ;
+    position: relative;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.container__dumpling:hover .blur-image {
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+}
+
+.container__dumpling:hover{
+    height: 210px;
+    width: 250px;
+    margin: 10px auto;
+    box-shadow: 0px 0px 20px 1px black;
+    transition: .2s;
+}
+
+.blur-image {
+    height: 100%;
+    width: 100%;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    transition: .5s;
+}
+
+.kurze-link {
+    background: url(../img/link_img/kurze_link.webp) no-repeat center;
+    background-size: cover;
+}
+.pelmeni-link {
+    background: url(../img/link_img/pelmeni_link.webp) no-repeat center;
+    background-size: cover;
+}
+.vareniki-link {
+
+    background: url(../img/link_img/vareniki_link.webp) no-repeat center;
+    background-size: cover;
+}
+.wonton-link {
+    background: url(../img/link_img/wonton_link.webp) no-repeat center;
+    background-size: cover;
+}
+.khinkali-link {
+    background: url(../img/link_img/khinkali-link.webp) no-repeat center;
+    background-size: cover;
+}
+.chuchvara-link {
+    background: url(../img/link_img/chuchvara_link.webp) no-repeat center;
+    background-size: cover;
+}
+.dimsam-link {
+    background: url(../img/link_img/dimsam_link.webp) no-repeat center;
+    background-size: cover;
+}
+.gyoza-link {
+    background: url(../img/link_img/gyoza_link.webp) no-repeat center;
+    background-size: cover;
+}
+.baozi-link {
+    background: url(../img/link_img/baozi_link.webp) no-repeat center;
+    background-size: cover;
+}
+.manti-link {
+    background: url(../img/link_img/manti_link.webp) no-repeat center;
+    background-size: cover;
+}
+
+.container-dimpling__name{
+    position: absolute;
+    background:rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    width: 100%;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    top: calc(50% - 10px) ;
+}
+/* Конец ссылок по сайту */
+
+.recipe__recipe-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.slider-wrapper {
+    background-color: #E3CEB7;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slider-container {
+    margin: 0 30px !important;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+}
+
+.slider-track {
+    display: flex;
+    transition: .5s linear;
+}
+
+/* спец стиль бесконечность слайдера!!! */
+
+.no-transition {
+    transition: none !important;
+}
+
+/*   */
+
+.container-item {
+    width: 20%;
+    flex-shrink: 0;
+    transition: .5s;
+}
+
+.slider-track__item {
+    display: flex;
+    align-items: center;
+    background-color: #C4C4C4;
+    height: 190px;
+    max-width: 240px;
+    margin: 25px auto;
+    cursor: pointer;
+}
+
+/* Кнопки слайдера */
+
+.btn-next {
+    -webkit-mask-image: url(../img/arrow.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: black;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    right: 20px;
+    top: calc(50% - 20px) ;
+    transition: .4s ease;
+    cursor: pointer;
+}
+
+.btn-prev {
+    -webkit-mask-image: url(../img/arrow.svg);
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    background-color: black;
+    transform: rotate(180deg);
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    left: 20px;
+    top: calc(50% - 20px);
+    transition: .4s ease;
+    cursor: pointer;
+}
+
+@media(max-width:1690px) {
+    .btn-prev,
+    .btn-next{
+        height: 35px;
+        width: 35px;
+    }
+    .btn-next{
+        right:10px;
+    }
+    .btn-prev{
+        left:10px;
+    }
+}
+
+@media(max-width:1460px) {
+    .btn-prev,
+    .btn-next{
+        height: 35px;
+        width: 35spx;
+    }
+    .btn-next{
+        right:5px;
+    }
+    .btn-prev{
+        left:5px;
+    }
+}
+
+@media(max-width:1170px) {
+    .btn-prev,
+    .btn-next{
+        bottom: 30px;
+        top:unset;
+    }
+    .btn-next{
+        right:calc(50% - 50px);
+    }
+    .btn-prev{
+        left:calc(50% - 50px);
+        
+    }
+}
+
+.btn-next:hover,
+.btn-prev:hover {
+    background-color: #fff;
+}
+
+.btn-input{
+    display: none;
+}
+
+.slider-buttons{
+    z-index: 2;
+}
+
+
+/* Фотки на элементах слайдера */
+
+.item-pelm-apple{background: url(../img/pelmeni/apple.webp) no-repeat center;background-size: cover;}
+.item-pelm-chiken{background: url(../img/pelmeni/chiken.webp) no-repeat center;background-size: cover;}
+.item-pelm-fish{background: url(../img/pelmeni/fish.webp) no-repeat center;background-size: cover;}
+.item-pelm-green-luk{background: url(../img/pelmeni/green-luk.webp) no-repeat center;background-size: cover;}
+.item-pelm-gribi-sirie{background: url(../img/pelmeni/gribi-sirie.webp) no-repeat center;background-size: cover;}
+.item-pelm-carrot{background: url(../img/pelmeni/carrot.webp) no-repeat center;background-size: cover;}
+.item-pelm-gribi-solenie{background: url(../img/pelmeni/gribi-solenie.webp) no-repeat center;background-size: cover;}
+.item-pelm-gribi-sushenie{background: url(../img/pelmeni/gribi-sushenie.webp) no-repeat center;background-size: cover;}
+.item-pelm-kalmar{background: url(../img/pelmeni/kalmar.webp) no-repeat center;background-size: cover;}
+.item-pelm-kapusta{background: url(../img/pelmeni/kapusta.webp) no-repeat center;background-size: cover;}
+.item-pelm-krapiva{background: url(../img/pelmeni/krapiva.webp) no-repeat center;background-size: cover;}
+.item-pelm-krapiva-snitia{background: url(../img/pelmeni/krapiva-snitia-lebeda.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-egg{background: url(../img/pelmeni/meat-egg.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-fish{background: url(../img/pelmeni/meat-fish.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-morkov{background: url(../img/pelmeni/meat-morkov.webp) no-repeat center;background-size: cover;}
+.item-pelm-pistiki{background: url(../img/pelmeni/pistiki.webp) no-repeat center;background-size: cover;}
+.item-pelm-po-taganaiski{background: url(../img/pelmeni/po-taganaiski.webp) no-repeat center;background-size: cover;}
+.item-pelm-potato{background: url(../img/pelmeni/potato.webp) no-repeat center;background-size: cover;}
+.item-pelm-potato-po-menzelinski{background: url(../img/pelmeni/potato-po-menzelinski.webp) no-repeat center;background-size: cover;}
+.item-pelm-po-zlatoustovski{background: url(../img/pelmeni/po-zlatoustovski.webp) no-repeat center;background-size: cover;}
+.item-pelm-redika{background: url(../img/pelmeni/redika.webp) no-repeat center;background-size: cover;}
+.item-pelm-redika-po-shemashinski{background: url(../img/pelmeni/redika-po-shemashinski.webp) no-repeat center;background-size: cover;}
+.item-pelm-repa-meat{background: url(../img/pelmeni/repa-meat.webp) no-repeat center;background-size: cover;}
+.item-pelm-shavel{background: url(../img/pelmeni/shavel.webp) no-repeat center;background-size: cover;}
+.item-pelm-siberian{background: url(../img/pelmeni/siberian.webp) no-repeat center;background-size: cover;}
+.item-pelm-kapusta-po-chinese{background: url(../img/pelmeni/s-kapustoi-po-chinese.webp) no-repeat center;background-size: cover;}
+.item-pelm-meat-borovoi{background: url(../img/pelmeni/s-meat-borovoi.webp) no-repeat center;background-size: cover;}
+.item-pelm-svekla-po-kargalinski{background: url(../img/pelmeni/svekla-po-kargalinski.webp) no-repeat center;background-size: cover;}
+.item-pelm-tikva{background: url(../img/pelmeni/tikva.webp) no-repeat center;background-size: cover;}
+.item-pelm-tikva-carrot{background: url(../img/pelmeni/tikva-carrot.webp) no-repeat center;background-size: cover;}
+.item-pelm-uraliski{background: url(../img/pelmeni/uraliski.webp) no-repeat center;background-size: cover;}
+
+.item-chuchvara-tomato {background: url(../img/chuchvara/chuchvara-v-tomate.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-garen {background: url(../img/chuchvara/chuchvara-garen.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-goviad {background: url(../img/chuchvara/chuchvara-s-goviad.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-potato {background: url(../img/chuchvara/chuchvara-s-potato.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-iagni {background: url(../img/chuchvara/chuchvara-s-iagni.webp) no-repeat center;background-size: cover;}
+.item-chuchvara-pig-and-chik {background: url(../img/chuchvara/chuchvara-s-pig-and-chiken.webp) no-repeat center;background-size: cover;}
+
+.item-kurze-baranina{background: url(../img/kurze/baranina.webp) no-repeat center;background-size: cover;}
+.item-kurze-chiken{background: url(../img/kurze/chiken.webp) no-repeat center;background-size: cover;}
+.item-kurze-goviad{background: url(../img/kurze/goviad.webp) no-repeat center;background-size: cover;}
+.item-kurze-krapiva{background: url(../img/kurze/krapiva.webp) no-repeat center;background-size: cover;}
+.item-kurze-krapiva-halta{background: url(../img/kurze/krapiva-i-halta.webp) no-repeat center;background-size: cover;}
+.item-kurze-potato{background: url(../img/kurze/potato.webp) no-repeat center;background-size: cover;}
+
+.item-vareniki-chechevica-shpinat{background: url(../img/vareniki/chechevica-shpinat.webp) no-repeat center;background-size: cover;}
+.item-vareniki-cherry{background: url(../img/vareniki/cherry.webp) no-repeat center;background-size: cover;}
+.item-vareniki-guzuliski{background: url(../img/vareniki/guzuliski.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-tvorogom{background: url(../img/vareniki/s-tvorogom.webp) no-repeat center;background-size: cover;}
+.item-vareniki-tvorog-slivi{background: url(../img/vareniki/tvorog-slivi.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-pavidlom{background: url(../img/vareniki/s-pavidlom.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-nuansom{background: url(../img/vareniki/s-nuansom.webp) no-repeat center;background-size: cover;}
+.item-vareniki-shok-vishnia{background: url(../img/vareniki/shok-vishnia.webp) no-repeat center;background-size: cover;}
+.item-vareniki-shok-tvorog-klubnika{background: url(../img/vareniki/shok-tvorog-klubnika.webp) no-repeat center;background-size: cover;}
+.item-vareniki-pineaple-kukuruza{background: url(../img/vareniki/pineaple-kukuruza.webp) no-repeat center;background-size: cover;}
+.item-vareniki-kefir-dark-smorod{background: url(../img/vareniki/kefir-dark-smorod.webp) no-repeat center;background-size: cover;}
+.item-vareniki-kapusta{background: url(../img/vareniki/kapusta.webp) no-repeat center;background-size: cover;}
+.item-vareniki-cheese-brokoli{background: url(../img/vareniki/cheese-brokoli.webp) no-repeat center;background-size: cover;}
+.item-vareniki-chiken-pecheni{background: url(../img/vareniki/chiken-pecheni.webp) no-repeat center;background-size: cover;}
+.item-vareniki-s-tikvoi-potato{background: url(../img/vareniki/s-tikvoi-potato.webp) no-repeat center;background-size: cover;}
+
+.item-wontoni-chiken-and-bacon{background: url(../img/wonton/chiken-and-bacon.webp) no-repeat center;background-size: cover;}
+.item-wontoni-chicken-and-potato{background: url(../img/wonton/chiken-and-potato.webp) no-repeat center;background-size: cover;}
+.item-wontoni-crab{background: url(../img/wonton/crab.webp) no-repeat center;background-size: cover;}
+.item-wontoni-krevetki{background: url(../img/wonton/krevetki.webp) no-repeat center;background-size: cover;}
+.item-wontoni-ovoshi{background: url(../img/wonton/ovoshi.webp) no-repeat center;background-size: cover;}
+.item-wontoni-pig{background: url(../img/wonton/pig.webp) no-repeat center;background-size: cover;}
+
+.item-manti-fish{background: url(../img/manti/fish.webp) no-repeat center;background-size: cover;}
+.item-manti-kapusta-potato{background: url(../img/manti/kapusta-potato-carrot.webp) no-repeat center;background-size: cover;}
+.item-manti-meat-tikva{background: url(../img/manti/meat-tikva.webp) no-repeat center;background-size: cover;}
+.item-manti-tikva{background: url(../img/manti/tikva.webp) no-repeat center;background-size: cover;}
+.item-manti-potato{background: url(../img/manti/potato.webp) no-repeat center;background-size: cover;}
+.item-manti-pig-carrot{background: url(../img/manti/pig-carrot.webp) no-repeat center;background-size: cover;}
+
+.item-khinkali-potato{background: url(../img/khinkali/potato.webp) no-repeat center;background-size: cover;}
+.item-khinkali-tikva{background: url(../img/khinkali/tikva.webp) no-repeat center;background-size: cover;}
+.item-khinkali-potato-cheese{background: url(../img/khinkali/potato-cheese.webp) no-repeat center;background-size: cover;}
+.item-khinkali-kapusta{background: url(../img/khinkali/kapusta.webp) no-repeat center;background-size: cover;}
+.item-khinkali-gribi{background: url(../img/khinkali/gribi.webp) no-repeat center;background-size: cover;}
+.item-khinkali-cheese{background: url(../img/khinkali/cheese.webp) no-repeat center;background-size: cover;}
+
+.item-dimsam-baklagiani{background: url(../img/dimsam/baklagiani.webp) no-repeat center;background-size: cover;}
+.item-dimsam-chicken{background: url(../img/dimsam/chicken.webp) no-repeat center;background-size: cover;}
+.item-dimsam-crystal{background: url(../img/dimsam/crystal.webp) no-repeat center;background-size: cover;}
+.item-dimsam-cucumber-potato{background: url(../img/dimsam/cucumber-potato.webp) no-repeat center;background-size: cover;}
+.item-dimsam-farsh-krevetki{background: url(../img/dimsam/farsh-krevetki.webp) no-repeat center;background-size: cover;}
+.item-dimsam-krevetki{background: url(../img/dimsam/krevetki.webp) no-repeat center;background-size: cover;}
+
+.item-gyoza-gribi{background: url(../img/gyoza/gribi.webp) no-repeat center;background-size: cover;}
+.item-gyoza-on-par{background: url(../img/gyoza/on-par.webp) no-repeat center;background-size: cover;}
+.item-gyoza-lazy{background: url(../img/gyoza/lazy.webp) no-repeat center;background-size: cover;}
+.item-gyoza-tiger-krevetka{background: url(../img/gyoza/tiger-krevetka.webp) no-repeat center;background-size: cover;}
+.item-gyoza-zharenie{background: url(../img/gyoza/zharenie.webp) no-repeat center;background-size: cover;}
+.item-gyoza-vegan{background: url(../img/gyoza/vegan.webp) no-repeat center;background-size: cover;}
+
+.item-baozi-bobi{background: url(../img/baozi/bobi.webp) no-repeat center;background-size: cover;}
+.item-baozi-goviad{background: url(../img/baozi/goviad.webp) no-repeat center;background-size: cover;}
+.item-baozi-kapusta-morkov{background: url(../img/baozi/kapusta-morkov-gribi.webp) no-repeat center;background-size: cover;}
+.item-baozi-morkov{background: url(../img/baozi/morkov.webp) no-repeat center;background-size: cover;}
+.item-baozi-pig{background: url(../img/baozi/pig.webp) no-repeat center;background-size: cover;}
+.item-baozi-fish{background: url(../img/baozi/fish.webp) no-repeat center;background-size: cover;}
+
+.container-item-name {
+    font-size: 22px;
+    background-color: rgba(0, 0, 0, 0.8);  
+    padding: 10px 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+/* Конец стилей слайдера */
+
+.footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #4D4A4A ;
+    height: 200px;
+}
+
+.footer-wrapper__copyright-text{
+    font-size: 18px;   
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.footer-wrapper__date{
+    color:gray;
+    font-size: 21px;
+}
+
+.footer-wrapper__link{
+    height: 40px;
+}
+
+.footer-wrapper__logo{
+    height: 80px;
+}
+
+.footer-wrapper__real-copyright{
+    color: rgb(252, 120, 3) ;
+}
+
+/* Модальное окно */
+
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color:rgba(121, 123, 136, 0.9);
+    z-index: 100;
+    overflow-y: auto;
+    animation: modalView .8s;
+}
+
+.modal-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.modal-close {
+    position: fixed;
+    top: 30px;
+    right: 45px;
+}
+
+
+.modal-close:hover {
+    fill: red;
+}
+
+@keyframes modalView{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.modal-wrapper.modalClose {
+    animation: modalClose .5s both;
+}
+
+@keyframes modalClose {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.modal-image {
+    height: 350px;
+    width: 400px;
+    border-radius: 5%;
+}
+
+.modal-name {
+    font-size: 45px;
+    margin: 0 100px 0 0;
+    color: #fff;
+}
+
+.modal-content__information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+}
+
+.modal-content__img-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 430px;
+    width: 100%;
+}
+
+.ingredient-elem{
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1 1 100%;
+    padding: 3px 0;
+}
+
+.span-space {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    border-bottom: 1px solid #d9d9d9;
+    height: 12px;
+    margin: 0 5px!important;
+}
+
+.all-ingredient {
+    font-size: 20px;
+    width: 800px;
+}
+
+.parts-of-recipe {
+    padding: 30px 0;
+}
+
+.modal-information-text {
+    font-size: 20px;
+    width: 820px;
+    border-top: 2px solid #d9d9d9;
+    padding: 20px 30px;
+    text-align: justify;
+}
+
+/* Конец модального окна */
+
+body.lock{
+    overflow: hidden;
+}
+
+@media(max-width:1366px) {
+
+    .navbar {
+        justify-content: start;
+        height: 60px;
+    }
+
+    .menu__item-link, .logo__link, .menu__item_dropdown, .dropdown-link {
+        font-size: 20px;
+        color: white;
+    }
+
+    .menu__item-dropdown-list, .menu__item-dropdownli {
+        width: 120px;
+    }
+    
+    .search{
+        margin: 0 20px 0 auto;
+    }
+
+    .search-field {
+        position: relative;
+        width: 0;
+        overflow-x: visible;
+    }
+    
+    @keyframes closeInput {
+        0%{
+            width: 0px;
+        }
+        100%{
+            width: 0px;
+        }
+    }
+
+    @keyframes openInput {
+        0%{
+            width: 0px;
+        }
+        100%{
+            width: 0px;
+        }
+    }
+
+    .search-input {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        transition: all 0.3s;
+        height: 0%;
+    }
+
+    .search-results {
+        position: absolute;
+        top: 80px;
+        right: -30px;
+        width: 263px;
+    }
+
+    .search-results div {
+        font-size: 16px;
+    }
+
+    .search-field.open-input .search-input {
+        height: 100%;
+    }
+
+    /* Адаптация слайдера */
+    .container-item {
+        width: 25%; 
+    }
+    /* Конец адаптации слайдера */
+    /* Адаптация навигационой панельки */
+    .container__dumplings-navigation {
+        row-gap: 15px;
+    }
+
+    .container__dumpling {
+        height: 165px;
+        width: 195px;
+        margin: 15px auto ;
+        position: relative;
+        transition: .2s;
+    }
+    
+    .container__dumpling:hover{
+        height: 175px;
+        width: 205px;
+        margin: 10px auto;
+    }
+
+    .container-dimpling__name{
+        font-size: 22px;
+        position: absolute;
+        padding: 10px 0;
+        top: calc(50% - 12px) ;
+    }
+    /* Конец адаптации навигации */
+    .slider-container{
+        margin: 0 20px !important;
+    }
+    /* Адаптация модального окна */
+    .modal-image {
+        height: 330px;
+        width: 380px;
+        margin-left: 15px;
+    }
+    
+    .modal-name {
+        font-size: 40px;
+        margin: 0 40px 0 0;
+        text-align: center;
+    }
+    
+    .all-ingredient {
+        font-size: 18px;
+        width: 600px;
+    }
+    
+    .modal-information-text {
+        font-size: 18px;
+        width: 620px;
+    }
+} 
+
+@media(max-width:1090px) {
+
+    .container__dumplings-navigation {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(5, 240px);
+        grid-gap: 15px;
+    }
+
+    .container__dumpling {
+        height: 200px;
+        width: 240px;
+        margin: 15px auto ;
+        position: relative;
+        transition: .2s;
+    }
+    
+    .container__dumpling:hover{
+        height: 210px;
+        width: 250px;
+        margin: 10px auto;
+        box-shadow: 0px 0px 20px 1px black;
+        transition: .2s;
+    }
+
+    .pelmeni-link {
+        grid-column: 2/6;
+        grid-row: 1/2;
+    }
+    .kurze-link {
+        grid-column: 6/10;
+        grid-row: 1/2;
+    }
+    .vareniki-link {
+        grid-column: 2/6;
+        grid-row: 2/3;
+    }
+    .wonton-link {
+        grid-column: 6/10;
+        grid-row: 2/3;
+    }
+    .manti-link {
+        grid-column: 2/6;
+        grid-row: 3/4;
+    }
+    .khinkali-link {
+        grid-column: 6/10;
+        grid-row: 3/4;
+    }
+    .chuchvara-link {
+        grid-column: 2/6;
+        grid-row: 4/5;
+    }
+    .dimsam-link {
+        grid-column: 6/10;
+        grid-row: 4/5;
+    }
+    .gyoza-link {
+        grid-column: 2/6;
+        grid-row: 5/6;
+    }
+    .baozi-link {
+        grid-column: 6/10;
+        grid-row: 5/6;
+    }
+
+}
+
+@media(max-width:992px){
+    .container-item {
+        width: 33%;
+    }
+
+    .menu__item-dropdown-list, .menu__item-dropdownli {
+        width: 110px;
+    }
+
+    .logo {
+        margin: 0 10px 0 10px;
+        padding: 0 10px 0 60px;
+    }
+
+    .menu__item, .menu__item-dropdownli {
+        margin: 0 10px;
+    }
+
+    /* Адаптация модального окна */
+
+    .modal-image {
+        height: 350px;
+        width: 400px;
+        margin: 30px 0;
+    }
+    
+    .modal-name {
+        font-size: 35px;
+        margin: 0;
+    }
+
+    .parts-of-recipe {
+        font-size: 24px;
+    }
+    
+    .modal-content__img-name {
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .all-ingredient {
+        font-size: 16px;
+        width: 550px;
+    }
+
+    .modal-information-text {
+        font-size: 16px;
+        width: 520px;
+        padding: 15px 25px;
+    }
+
+}
+
+@media(max-width:820px) {
+    .container-item {
+        width: 50%;
+        padding: 4px;
+    }
+
+    .slider-track__item{
+        width: 100%;
+    }
+
+    .slider-container{
+        margin: 0 !important;
+    }
+}
+
+@media(max-width:768px) {
+    .navbar {
+        z-index:unset ;
+        height: 50px;
+    }
+    
+    .menu {
+        display: none;
+    }
+
+    .search { 
+        display: none;
+    }
+    /* Рисуем бургер */
+    .navbar__burger {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+        right: 15px;
+    }
+
+    .navbar__burger span{
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        top: 9px;
+    }
+
+    .navbar__burger::before,
+    .navbar__burger::after {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        right: 0px;
+    }
+    
+    .navbar__burger::before {
+        top:0;
+    }
+    
+    .navbar__burger::after {
+        bottom: 0;
+    }
+
+    .navbar__burger.active:before,
+    .navbar__burger.active:after,
+    .navbar__burger.active span  {
+        transition: 0.3s ease 0s; 
+        background-color: rgb(252, 120, 3);
+    }
+
+    .navbar__burger:before,
+    .navbar__burger:after,
+    .navbar__burger span {
+        transition: 0.3s ease 0s;
+    }
+    /* Нарисовали */
+    /* Наполнение бургера */
+
+    /* Пишем для бургера с классом active */
+    .navbar__burger.active::before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .navbar__burger.active::after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+
+    .navbar__burger.active span {
+        transform: scale(0);
+    }
+
+    .navbar__burger-menu.active {
+        top:0;
+    }
+
+    /* Конец стилей для активного бургера */
+    .navbar__burger-menu{
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-between;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        transition: 0.3s ease 0s;
+        background-color: #445c73;
+        z-index: 1;
+        padding: 70px 25px 20px ;
+    }
+
+    /* Настройка внутреностей бургера */
+
+    .navbar__list{
+        display: block;
+    }
+
+    .navbar__list li{
+        margin: 0 0 30px 0;
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .navbar__list:first-child {
+        margin: 30px 0 30px 0;
+    }
+
+    .navbar__list a:hover{
+        color: rgb(252, 120, 3);
+        transition: 0.25s;
+    }
+
+    /* конец внутреностей */
+
+    .logo a{   
+        font-size: 18px;
+    }
+
+    .logo{
+        margin: 0 0 0 15px;
+        padding:0 5px 0 35px ;
+        height: 50px;
+        min-width: auto;
+    }
+
+    .logo::before {  
+        height: 30px;
+        width: 30px;
+        left: 0px;
+    }
+
+    .container_taglain{
+        font-size: 34px;
+        
+    }
+    /* Фичи */
+    .secret-information{
+        margin: 0 0 190px 0;
+        position: relative;
+    }
+
+    .secret-information::after{
+        content: '';
+        -webkit-mask-size:contain ;
+        -webkit-mask-image: url(../img/rabbit_icon.svg);
+        -webkit-mask-position: center;
+        -webkit-mask-repeat: no-repeat;
+        background-color: #fff;
+        height: 110px;
+        width: 110px;
+        right:calc(100% - 50% - 55px);
+        top: 20px;
+        position: absolute;
+    }
+
+    .secret-information_text{
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .menu__item-link-burger {
+        font-size: 20px;
+    }
+
+    .footer-wrapper__link{
+        height: 30px;
+    }
+
+    .footer-wrapper__copyright-text{
+        padding: 5px;
+        font-size: 14px;    
+    }
+
+    .footer-wrapper__date{
+        font-size: 15px;
+    }
+    
+    .footer-wrapper__logo-wrapper{
+        display: none;
+    }
+
+    /* Адаптация модального окна */
+
+    .modal-close {
+        top: 15px;
+        right: 15px;
+    }
+
+    .modal-image {
+        height: 350px;
+        width: 400px;
+        border-radius: 5%;
+    }
+    
+    .modal-name {
+        font-size: 32px;
+    }
+        
+    .all-ingredient {
+        font-size: 14px;
+        width: 400px;
+    }
+    
+    .parts-of-recipe {
+        padding: 30px 0;
+    }
+    
+    .modal-information-text {
+        font-size: 14px;
+        width: 420px;
+        border-top: 2px solid #d9d9d9;
+        padding: 20px 30px;
+        text-align: justify;
+    }
+} 
+@media (max-width:576px) {
+
+    .footer-wrapper{
+        flex-direction: column-reverse;
+    }
+
+    /* Адаптация блока навигации и его наполнения */
+
+    .container__dumplings-navigation {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(5, 170px);
+        grid-gap: 12px;
+        padding: 30px 0;
+    }
+
+    .container__dumpling {
+        height: 155px;
+        width: 160px;
+        margin: 5px auto;
+    }
+        
+    .container__dumpling:hover{
+        height: 158px;
+        width: 165px;
+        margin: 2.5px auto;
+    }
+
+    .pelmeni-link {
+        grid-column: 1/6;
+        grid-row: 1/2;
+    }
+    .kurze-link {
+        grid-column: 6/11;
+        grid-row: 1/2;
+    }
+    .vareniki-link {
+        grid-column: 1/6;
+        grid-row: 2/3;
+    }
+    .wonton-link {
+        grid-column: 6/11;
+        grid-row: 2/3;
+    }
+    .manti-link {
+        grid-column: 1/6;
+        grid-row: 3/4;
+    }
+    .khinkali-link {
+        grid-column: 6/11;
+        grid-row: 3/4;
+    }
+    .chuchvara-link {
+        grid-column: 1/6;
+        grid-row: 4/5;
+    }
+    .dimsam-link {
+        grid-column: 6/11;
+        grid-row: 4/5;
+    }
+    .gyoza-link {
+        grid-column: 1/6;
+        grid-row: 5/6;
+    }
+    .baozi-link {
+        grid-column: 6/11;
+        grid-row: 5/6;
+    }
+
+    /* Адаптация модального окна */
+
+    .modal-close {
+        top: 6px;
+        right: 6px;
+    }
+
+    .modal-image {
+        height: 300px;
+        width: 300px;
+    }
+    
+    .modal-name {
+        font-size: 28px;
+    }
+        
+    .all-ingredient {
+        font-size: 14px;
+        width: 350px;
+    }
+    
+    .parts-of-recipe {
+        padding: 30px 0;
+    }
+    
+    .modal-information-text {
+        font-size: 14px;
+        width: 350px;
+        border-top: 2px solid #d9d9d9;
+        padding: 20px 10px;
+        text-align: justify;
+    }
+
+    /* Адаптация сколлбара */
+    ::-webkit-scrollbar {
+        width: 0px; /* ширина для вертикального скролла */
+        height: 2px; /* высота для горизонтального скролла */
+        background-color: white;
+    }
+}
+
+
+.preloader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #E3CEB7;
+    z-index: 1000;
+    transition: all .3s ease-out;
+}
+
+.preloader_hide {
+    opacity:0;
+    visibility: hidden;
+    z-index: -1;
+}
+
+.preloader__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 16px;
+    transform: translate(-50%,-50%);
+}
+
+@keyframes ldio-e1xxnbsoso {
+    0% { transform: translate(-50%,-50%) rotate(0deg); }
+    100% { transform: translate(-50%,-50%) rotate(360deg); }
+}
+.ldio-e1xxnbsoso div {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 10px solid  rgba(252, 120, 3,0.45);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: ldio-e1xxnbsoso 1s linear infinite;
+    top: 100px;
+    left: 100px;
+    box-sizing: content-box; 
+}
+
+.loadingio-spinner-rolling-9izsnfva8xm {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0);
+ }
+.ldio-e1xxnbsoso {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; 
+}
+/* generated by https://loading.io/ */
+
+.container-tricks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+
+.container-tricks__item {
+    display: flex;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+    margin: 50px 50px;
+    padding: 0 20px;
+    background-color: rgba(77, 74, 74, 0.65);
+    border-radius: 40px;
+}
+
+.container-tricks__item p {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+}
